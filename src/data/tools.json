@@ -1,0 +1,802 @@
+[
+  {
+    "name": "Claude",
+    "category": "Chat",
+    "url": "https://claude.ai",
+    "oneliner": "Anthropic's AI assistant built with a focus on safety and honest, helpful responses.",
+    "verdict": "safe",
+    "scores": { "privacy": 4, "dataUse": 4, "transparency": 4, "quality": 5 },
+    "flags": [
+      "Does not use your conversations to train models by default",
+      "No ads and no selling of your data to third parties",
+      "Clear, readable privacy policy with plain-English explanations",
+      "You can request deletion of your account and data",
+      "API users get even stronger data protections by default"
+    ],
+    "detail": "Anthropic designed Claude with privacy as a core principle — it does not train on your conversations by default and has no advertising business to feed. It's one of the most trustworthy AI tools available for sensitive or personal work, with a privacy policy that's actually readable without a law degree."
+  },
+  {
+    "name": "Adobe Firefly",
+    "category": "Image",
+    "url": "https://firefly.adobe.com",
+    "oneliner": "Adobe's AI image generator trained exclusively on licensed and public-domain content.",
+    "verdict": "safe",
+    "scores": { "privacy": 4, "dataUse": 4, "transparency": 4, "quality": 4 },
+    "flags": [
+      "Trained only on licensed content — not user uploads",
+      "Your creations are not used to train future AI models",
+      "Strong commercial-use protections for generated images",
+      "Adobe has a detailed and transparent privacy policy",
+      "Enterprise customers get additional data governance controls"
+    ],
+    "detail": "Adobe Firefly stands out because it was trained entirely on licensed content, so you can use it commercially without copyright worries. Adobe also has a clear policy against using your creations to train future models — a meaningful commitment that most AI image tools don't make."
+  },
+  {
+    "name": "Mistral Le Chat",
+    "category": "Chat",
+    "url": "https://chat.mistral.ai",
+    "oneliner": "French AI company Mistral's chat interface, built on strong European privacy principles.",
+    "verdict": "safe",
+    "scores": { "privacy": 4, "dataUse": 3, "transparency": 4, "quality": 4 },
+    "flags": [
+      "European company operating under strict GDPR privacy law",
+      "Clear data opt-out controls in account settings",
+      "Conversations are not sold to advertisers",
+      "Data hosted within Europe",
+      "Newer company — long-term track record still being established"
+    ],
+    "detail": "Mistral is a French AI company operating under EU law (GDPR), which gives users meaningful legal rights over their data that most US-based AI companies don't have to honour. It's one of the more privacy-respecting chat options available, though as a newer company it's still building its long-term track record."
+  },
+  {
+    "name": "ChatGPT",
+    "category": "Chat",
+    "url": "https://chat.openai.com",
+    "oneliner": "OpenAI's popular AI chatbot capable of writing, coding, analysis, and general conversation.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 5 },
+    "flags": [
+      "Conversations used to train AI models unless you opt out",
+      "Opt-out option exists but is buried in settings",
+      "OpenAI may share data with third-party service providers",
+      "Strong safety team and regular policy updates",
+      "Paid plans offer some additional privacy controls"
+    ],
+    "detail": "OpenAI collects and may use your conversations to train its models by default, though you can opt out in settings — it's just not made obvious. ChatGPT is a powerful tool but worth reviewing your privacy settings before discussing anything sensitive, especially on the free tier."
+  },
+  {
+    "name": "Gemini",
+    "category": "Chat",
+    "url": "https://gemini.google.com",
+    "oneliner": "Google's AI assistant integrated across Google Workspace and Search.",
+    "verdict": "caution",
+    "scores": { "privacy": 2, "dataUse": 2, "transparency": 3, "quality": 5 },
+    "flags": [
+      "Chats linked to your Google account and ad profile",
+      "Google uses conversations to improve its products by default",
+      "Data flows into Google's broader ad and analytics ecosystem",
+      "No meaningful way to fully separate from Google data sharing",
+      "Workspace version has stronger enterprise protections"
+    ],
+    "detail": "Because Gemini is deeply woven into Google's ecosystem, your conversations are linked to your Google account and can influence what Google knows about you. It's hard to use Gemini without feeding into Google's advertising and data practices, which is a real trade-off for a very capable product."
+  },
+  {
+    "name": "Microsoft Copilot",
+    "category": "Chat",
+    "url": "https://copilot.microsoft.com",
+    "oneliner": "Microsoft's AI chat assistant powered by GPT-4, built into Windows and the web.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Conversations tied to your Microsoft account when signed in",
+      "Chat history stored and may feed into Microsoft product improvements",
+      "Bing search data integrated with AI responses",
+      "Enterprise version has much stronger privacy controls",
+      "Relatively transparent privacy policy from Microsoft"
+    ],
+    "detail": "Microsoft Copilot combines Bing search with GPT-4, and when signed in your conversations are tied to your Microsoft profile. Microsoft's privacy practices are more transparent than many competitors, but conversations are still processed and stored — and the data can feed into Microsoft's broader product improvement efforts."
+  },
+  {
+    "name": "Poe",
+    "category": "Chat",
+    "url": "https://poe.com",
+    "oneliner": "Quora's AI chat platform giving access to multiple AI models in one place.",
+    "verdict": "caution",
+    "scores": { "privacy": 2, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Conversations pass through Quora's platform before reaching the AI provider",
+      "Data shared with multiple underlying AI model providers",
+      "Tied to your Quora account and activity profile",
+      "No unified privacy guarantee covering all model providers",
+      "Limited control over which AI provider receives your specific message"
+    ],
+    "detail": "Poe gives you access to many AI models in one place, but every conversation passes through Quora's platform and then on to whichever model provider is powering the bot. You're trusting Quora's privacy practices on top of each model provider's practices — which doubles the data exposure compared to using those models directly."
+  },
+  {
+    "name": "GitHub Copilot",
+    "category": "Productivity",
+    "url": "https://github.com/features/copilot",
+    "oneliner": "AI pair programmer by Microsoft/GitHub that suggests code completions inside your editor.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 4, "quality": 5 },
+    "flags": [
+      "Code snippets are sent to Microsoft servers for processing",
+      "Training data opt-out is available in account settings",
+      "Enterprise plans offer stronger data isolation controls",
+      "Telemetry collected on how you use suggestions",
+      "Does not store your code long-term by default"
+    ],
+    "detail": "Copilot sends your code to Microsoft's servers for processing, which matters if you work with proprietary or sensitive codebases. Enterprise customers get meaningful data isolation, but free and personal users should think twice before using it on confidential projects."
+  },
+  {
+    "name": "Perplexity",
+    "category": "Chat",
+    "url": "https://www.perplexity.ai",
+    "oneliner": "AI-powered search engine that answers questions with cited sources in real time.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Search queries and conversation history stored on servers",
+      "Data shared with third-party analytics providers",
+      "No clear opt-out from using your queries to improve the service",
+      "Pro plan offers some additional privacy controls",
+      "Less tracking than traditional search engines overall"
+    ],
+    "detail": "Perplexity stores your search queries and may share them with analytics providers, behaving similarly to traditional search engines in this regard. It's a genuinely useful tool but not meaningfully more private than Google Search — the main benefit is better answers, not better privacy."
+  },
+  {
+    "name": "Notion AI",
+    "category": "Productivity",
+    "url": "https://www.notion.so/product/ai",
+    "oneliner": "AI writing and summarisation built into Notion's all-in-one workspace.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Workspace content is processed by OpenAI on Notion's behalf",
+      "AI features access all content in your workspace",
+      "Data retention periods not clearly specified",
+      "Enterprise plan includes data processing agreements",
+      "Your notes may be seen by a third-party AI provider"
+    ],
+    "detail": "Notion AI processes your workspace content through OpenAI, meaning your notes and documents pass through a third party you didn't directly sign up with. This is fine for general productivity but could be a real concern if your Notion workspace holds confidential business or personal information."
+  },
+  {
+    "name": "Grammarly",
+    "category": "Writing",
+    "url": "https://www.grammarly.com",
+    "oneliner": "AI writing assistant that checks grammar, tone, and style across apps and websites.",
+    "verdict": "caution",
+    "scores": { "privacy": 2, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Reads everything you type across all websites and apps",
+      "Your text is stored on Grammarly's servers",
+      "Data shared with advertising and analytics partners",
+      "You can opt out of some sharing but not all data collection",
+      "Browser extension has broad permissions across all sites"
+    ],
+    "detail": "Grammarly reads everything you type across all your apps and websites — emails, messages, documents — and stores that text on its servers. The grammar help is real, but you are making a significant data trade-off that most users don't fully realise when they install the extension."
+  },
+  {
+    "name": "QuillBot",
+    "category": "Writing",
+    "url": "https://quillbot.com",
+    "oneliner": "AI paraphrasing and writing improvement tool that rewrites text in different styles.",
+    "verdict": "caution",
+    "scores": { "privacy": 2, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "All text you paste is processed and stored on QuillBot servers",
+      "Data shared with advertising and analytics partners",
+      "No clear data retention timeline specified",
+      "Browser extension reads text you type across all websites",
+      "Limited privacy controls on the free tier"
+    ],
+    "detail": "QuillBot reads and stores all the text you paste into it, and its browser extension extends this to text you type across all websites — similar to Grammarly's data access model. The privacy policy is thin on specifics, and data is shared with advertising partners, which is worth knowing before you use it for anything sensitive."
+  },
+  {
+    "name": "Sudowrite",
+    "category": "Writing",
+    "url": "https://www.sudowrite.com",
+    "oneliner": "AI writing assistant built specifically for fiction authors and creative storytelling.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Your fiction and story drafts stored on Sudowrite's servers",
+      "Content processed by underlying third-party AI providers",
+      "No clear opt-out from training data use",
+      "Creative work could be used to improve their models",
+      "Enterprise option available with stronger data agreements"
+    ],
+    "detail": "Sudowrite helps fiction writers generate story content, which means your plot ideas, characters, and drafts are processed by external AI providers and stored on Sudowrite's servers. The company doesn't publish clear opt-out instructions for training data use, so your creative work could theoretically improve their models without your explicit knowledge."
+  },
+  {
+    "name": "Rytr",
+    "category": "Writing",
+    "url": "https://rytr.me",
+    "oneliner": "AI writing assistant for generating marketing copy, emails, and business content quickly.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 3 },
+    "flags": [
+      "Content you generate may be used to improve Rytr's models",
+      "Data shared with underlying AI providers",
+      "No detailed retention policy published",
+      "Basic privacy controls only on standard plans",
+      "Business plan includes data privacy agreements"
+    ],
+    "detail": "Rytr handles your marketing and business copy through multiple AI providers, and its terms allow for using your content to improve the service. It's fine for generic public-facing content, but the lack of detail around data retention and training use makes it unsuitable for confidential business or client information."
+  },
+  {
+    "name": "Jasper",
+    "category": "Writing",
+    "url": "https://www.jasper.ai",
+    "oneliner": "AI content platform for marketing teams to generate blog posts, ads, and copy at scale.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 3 },
+    "flags": [
+      "Content you create may be used to improve Jasper's models",
+      "Multiple third-party AI providers process your inputs",
+      "Business plan includes data privacy agreements",
+      "Retention periods not clearly disclosed",
+      "Standard plan users have limited data control"
+    ],
+    "detail": "Jasper uses multiple AI providers behind the scenes, so your content is processed by more than one company you may not have heard of. Business plans include data privacy agreements, but individual users have less visibility into how their content is handled or for how long it's kept."
+  },
+  {
+    "name": "Writesonic",
+    "category": "Writing",
+    "url": "https://writesonic.com",
+    "oneliner": "AI writing tool for generating blog posts, product descriptions, and marketing copy.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 3 },
+    "flags": [
+      "Your content inputs may be used to improve the service",
+      "Underlying AI providers also receive your data",
+      "No detailed information on how long data is kept",
+      "Enterprise plan offers custom data handling agreements",
+      "Reasonable for general marketing copy but avoid sensitive inputs"
+    ],
+    "detail": "Writesonic's terms allow it to use your content to improve the service, and the company doesn't provide clear details on how long data is kept or who exactly has access to it. It's reasonable for general marketing work, but you should avoid inputting confidential business or client information."
+  },
+  {
+    "name": "Copy.ai",
+    "category": "Writing",
+    "url": "https://www.copy.ai",
+    "oneliner": "AI writing assistant for generating marketing copy, emails, and social media content.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 3 },
+    "flags": [
+      "Your inputs are shared with underlying AI model providers",
+      "Content may be used to improve the service",
+      "No clear data deletion timeline specified",
+      "Business plan includes data privacy protections",
+      "Lack of transparency about which AI providers are used"
+    ],
+    "detail": "Your content is shared with the underlying AI providers powering Copy.ai, and the company doesn't clearly explain how long that data is kept or how to delete it. It's decent for standard marketing copy, but the lack of transparency makes it a caution for anything sensitive."
+  },
+  {
+    "name": "DALL-E",
+    "category": "Image",
+    "url": "https://openai.com/dall-e-3",
+    "oneliner": "OpenAI's image generator that creates high-quality images from text descriptions.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Image prompts stored and may be used to train future OpenAI models",
+      "Generated images stored on OpenAI servers",
+      "No way to make images private within the ChatGPT interface",
+      "Subject to the same data policy as ChatGPT",
+      "Paid tier offers opt-out from training data use"
+    ],
+    "detail": "DALL-E is OpenAI's image generator accessed through ChatGPT, carrying the same data practices — your prompts may be used to train future models unless you opt out. It produces excellent images, but there's no private image generation: everything you create is stored on OpenAI's servers alongside your chat history."
+  },
+  {
+    "name": "Leonardo.ai",
+    "category": "Image",
+    "url": "https://leonardo.ai",
+    "oneliner": "AI image generation platform popular with game developers and digital artists.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "All images are public on the free tier by default",
+      "Prompts and images stored on Leonardo's servers",
+      "Content may be used to improve their models",
+      "Privacy policy lacks specifics on retention",
+      "Private image generation requires a paid subscription"
+    ],
+    "detail": "Leonardo.ai is a popular image platform where all free-tier generations are public by default, visible in the community gallery for anyone to browse. Your prompts and images are stored on Leonardo's servers with limited transparency about training data use and no clear path to delete them after the fact."
+  },
+  {
+    "name": "Canva AI",
+    "category": "Image",
+    "url": "https://www.canva.com/ai-image-generator",
+    "oneliner": "AI design and image generation features built into Canva's popular design platform.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "All design content processed by Canva's AI systems",
+      "Content may be used to improve Canva's AI features",
+      "Data shared with third-party AI providers for processing",
+      "Relatively transparent privacy policy from Canva",
+      "Enterprise plan has stronger data controls and agreements"
+    ],
+    "detail": "Canva's AI design features are convenient, but all your design content is processed through Canva's AI systems and potentially shared with underlying AI providers. Canva is relatively transparent about its practices and offers enterprise data controls, but individual users have limited options to opt out of AI improvement data use."
+  },
+  {
+    "name": "Ideogram",
+    "category": "Image",
+    "url": "https://ideogram.ai",
+    "oneliner": "AI image generator that specialises in creating images with accurate, readable text.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Generated images publicly visible by default on free tier",
+      "Prompts and images stored on Ideogram's servers",
+      "Privacy policy thin on specifics about retention and training use",
+      "Newer company with limited established privacy track record",
+      "Private image generation available on paid plans"
+    ],
+    "detail": "Ideogram specialises in generating images with readable text and does it well, but like most image tools your generations are publicly visible by default on the free tier. Its privacy policy is thin on specifics — typical for younger companies, but worth knowing before you create anything you'd rather keep private."
+  },
+  {
+    "name": "You.com",
+    "category": "Chat",
+    "url": "https://you.com",
+    "oneliner": "AI search engine that combines web results with chatbot answers and source citations.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 3 },
+    "flags": [
+      "Search and chat history tracked by default",
+      "Third-party app integrations may receive your queries",
+      "Offers a private search mode with limited history",
+      "Data used to personalise future search results",
+      "Less tracking than Google but not privacy-first"
+    ],
+    "detail": "You.com tracks your search and chat history by default to personalise results, behaving much like other major search engines in this regard. Its private mode offers some additional protection, but it's not a genuinely privacy-first alternative — it's more of a lighter version of the same trade-offs."
+  },
+  {
+    "name": "Runway",
+    "category": "Video",
+    "url": "https://runwayml.com",
+    "oneliner": "AI video generation and editing platform for creators and filmmakers.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Media uploads stored on cloud servers indefinitely by default",
+      "Generated content may be used for model training",
+      "Privacy policy allows broad use of user-created assets",
+      "Enterprise plan offers stronger data controls",
+      "No clear process to request deletion of uploaded media"
+    ],
+    "detail": "Runway stores your uploaded media and generated videos on its cloud servers, and the terms allow the company fairly broad use of user-created content including for model training. It's a powerful creative tool, but worth reviewing the terms carefully before using it for commercially sensitive projects."
+  },
+  {
+    "name": "Pika",
+    "category": "Video",
+    "url": "https://pika.art",
+    "oneliner": "AI video generator that turns text prompts and images into short video clips.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Video prompts and outputs stored on Pika's servers",
+      "Privacy policy lacks detail on data retention periods",
+      "No clear opt-out from using content to train models",
+      "Free-tier generations are publicly visible by default",
+      "Relatively young company with limited privacy track record"
+    ],
+    "detail": "Pika's privacy policy is notably thin on specifics about how long your data is kept and whether your generations are used for model training. Free-tier videos are public by default, which is worth knowing if you're creating anything you want to keep private. It's a caution — not because it's done anything wrong, but because there's too little information to be sure."
+  },
+  {
+    "name": "Sora",
+    "category": "Video",
+    "url": "https://openai.com/sora",
+    "oneliner": "OpenAI's text-to-video model that generates cinematic video clips from written prompts.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 5 },
+    "flags": [
+      "Video prompts and generations stored by OpenAI",
+      "May be used to train future models unless opted out",
+      "Subject to the same data practices as ChatGPT",
+      "Safety filters applied to all generated content",
+      "Paid plan required for access, no free tier currently"
+    ],
+    "detail": "Sora is OpenAI's text-to-video model, carrying the same data practices as ChatGPT — your prompts may be used to train future models unless you opt out. It produces exceptional results and is among the most technically impressive AI video tools, but the data practices are no more private than OpenAI's other products."
+  },
+  {
+    "name": "Luma AI",
+    "category": "Video",
+    "url": "https://lumalabs.ai",
+    "oneliner": "AI video generation platform known for realistic motion and the Dream Machine model.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Video generations stored on Luma's cloud servers",
+      "Privacy policy thin on retention and training use specifics",
+      "Free-tier videos are publicly visible by default",
+      "Early-stage startup with limited established privacy track record",
+      "No clear data deletion process documented"
+    ],
+    "detail": "Luma AI's Dream Machine is an impressive video generator from a Silicon Valley startup, but as a young company it has a thin privacy policy with little detail about data retention or training use. Free-tier generations are publicly visible, and there's no established long-term track record to judge how the company handles data."
+  },
+  {
+    "name": "Descript",
+    "category": "Voice",
+    "url": "https://www.descript.com",
+    "oneliner": "AI-powered audio and video editor that lets you edit recordings by editing the transcript.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Audio and video files uploaded and stored in Descript's cloud",
+      "Transcriptions processed on external servers",
+      "Third-party recording participants may not know they've been uploaded",
+      "Team plans share files across your entire organisation",
+      "Data deletion is available but the timeline is unclear"
+    ],
+    "detail": "Descript stores your audio and video recordings in the cloud to power its AI editing features, which means sensitive meetings, interviews, and recordings live on external servers. Anyone recorded in your Descript projects hasn't necessarily consented to having their audio uploaded and transcribed by a third-party service — that responsibility falls on you."
+  },
+  {
+    "name": "HeyGen",
+    "category": "Video",
+    "url": "https://www.heygen.com",
+    "oneliner": "AI avatar video platform that creates spokesperson videos from text scripts.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Your face and voice data are stored to create avatar models",
+      "Biometric data retained on HeyGen servers",
+      "Clear consent process required before avatar creation",
+      "Enterprise plan includes stronger biometric data protections",
+      "Risk of avatar misuse if account credentials are compromised"
+    ],
+    "detail": "HeyGen requires your face and voice — inherently sensitive biometric data — to create digital avatars, and retains that data on its servers. The consent process is clear and the enterprise tier has stronger protections, but anyone uploading their likeness should understand that they're trusting HeyGen with something that can't be changed if it's ever misused."
+  },
+  {
+    "name": "Synthesia",
+    "category": "Video",
+    "url": "https://www.synthesia.io",
+    "oneliner": "AI video creation platform using digital avatars to deliver scripted presentations.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Facial likeness data processed and stored on Synthesia servers",
+      "Enterprise-focused with stronger compliance controls",
+      "Free tier offers limited data control options",
+      "Reasonable transparency about how avatar data is handled",
+      "GDPR-compliant with data processing agreements available"
+    ],
+    "detail": "Synthesia processes and stores your facial likeness data to build digital avatars, which is inherently sensitive. It's primarily designed for enterprise customers who get stronger compliance and data control, leaving individual users on lower tiers with fewer protections. Reasonable for corporate use cases, more cautious for personal use."
+  },
+  {
+    "name": "ElevenLabs",
+    "category": "Voice",
+    "url": "https://elevenlabs.io",
+    "oneliner": "AI voice synthesis platform for creating realistic speech and cloning voices.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 5 },
+    "flags": [
+      "Voice samples stored and used to build your voice model",
+      "Cloned voice could be misused if your account is compromised",
+      "Consent verification required before cloning another person's voice",
+      "Clear terms around prohibited uses of voice cloning",
+      "Voice data is biometric and cannot be changed if exposed"
+    ],
+    "detail": "ElevenLabs stores your voice samples to build a voice model, and voice data is biometric — unlike a password, you can't change your voice if it's ever exposed. The consent process for cloning other people's voices is a genuine positive, but users should understand the long-term sensitivity of what they're uploading."
+  },
+  {
+    "name": "Murf.ai",
+    "category": "Voice",
+    "url": "https://murf.ai",
+    "oneliner": "AI voice generator for creating natural-sounding narrations and voiceovers from text.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Voice scripts and generated audio stored on Murf's servers",
+      "Retention period for generated audio files not clearly stated",
+      "Scripts may be used to improve Murf's voice models",
+      "Enterprise plan includes data processing agreements",
+      "Designed primarily for professional narration, not personal voice cloning"
+    ],
+    "detail": "Murf stores the voice scripts you enter and the generated audio files in its cloud, though it's primarily a professional narration tool rather than a voice cloning service. The privacy policy is reasonable but doesn't provide clear detail on retention periods or whether your scripts influence the AI models over time."
+  },
+  {
+    "name": "PlayHT",
+    "category": "Voice",
+    "url": "https://play.ht",
+    "oneliner": "AI text-to-speech and voice cloning platform for creating realistic synthetic voices.",
+    "verdict": "caution",
+    "scores": { "privacy": 2, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Voice samples stored to create clones with limited transparency",
+      "Biometric voice data retained on PlayHT servers",
+      "Privacy policy thin on data retention and security specifics",
+      "No strong consent verification process for voice cloning",
+      "Cloned voices could be misused if accounts are compromised"
+    ],
+    "detail": "PlayHT handles voice cloning with less transparency than comparable tools — the privacy policy is thin on specifics about how long voice samples are kept and what security measures protect them. Voice data is among the most sensitive biometric information you can share, so the lack of detail here is a meaningful concern before you record your voice."
+  },
+  {
+    "name": "Speechify",
+    "category": "Voice",
+    "url": "https://speechify.com",
+    "oneliner": "AI text-to-speech app that reads documents, articles, and web pages aloud.",
+    "verdict": "caution",
+    "scores": { "privacy": 2, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Documents and text uploaded for reading stored on Speechify's servers",
+      "Browser extension reads page content across all websites you visit",
+      "Voice cloning feature stores biometric data",
+      "Data shared with third-party analytics providers",
+      "Limited transparency about retention and who accesses your documents"
+    ],
+    "detail": "Speechify reads documents and web pages aloud, and its browser extension accesses text across all the sites you visit — similar to Grammarly's broad data access model. The voice cloning feature adds biometric data to the equation, and overall the privacy policy lacks detail about how long your uploaded content is stored or who can access it."
+  },
+  {
+    "name": "Suno",
+    "category": "Voice",
+    "url": "https://suno.com",
+    "oneliner": "AI music generator that creates original songs from text prompts in seconds.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 2, "quality": 4 },
+    "flags": [
+      "All generated music and prompts stored on Suno's servers",
+      "Terms allow Suno to use your generations to improve the service",
+      "No clear data deletion policy published",
+      "Free-tier songs are public by default",
+      "Limited transparency on data retention timelines"
+    ],
+    "detail": "Suno retains all your generated music and the prompts behind it, and its terms give the company latitude to use your creations to improve the service. The lack of a clear deletion policy is a meaningful gap, especially if you're creating music you'd rather keep private. Free-tier outputs are public, which most users don't realise upfront."
+  },
+  {
+    "name": "Otter.ai",
+    "category": "Voice",
+    "url": "https://otter.ai",
+    "oneliner": "AI transcription service that records and summarises meetings in real time.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Meeting audio and full transcripts stored in the cloud",
+      "Other meeting participants may not know they are being recorded",
+      "Team plans share transcripts across your organisation",
+      "You can delete transcripts manually but audio retention is unclear",
+      "Sensitive meeting content held on external servers"
+    ],
+    "detail": "Otter.ai stores your meeting audio and full transcripts in the cloud, which is great for productivity but means sensitive conversations live on external servers. Importantly, other people in your meetings may not know they're being recorded — making sure everyone consents is your responsibility, not Otter's."
+  },
+  {
+    "name": "Fireflies.ai",
+    "category": "Productivity",
+    "url": "https://fireflies.ai",
+    "oneliner": "AI meeting recorder that transcribes, summarises, and searches your calls automatically.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 2, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Records and stores all meeting audio and transcripts",
+      "Getting consent from all participants is your responsibility",
+      "Data stored on third-party cloud infrastructure",
+      "Business plan includes stronger data governance options",
+      "Searchable transcript archive could be a liability if breached"
+    ],
+    "detail": "Fireflies records and transcribes every meeting it joins, building a searchable archive of your conversations on external servers. Getting consent from all meeting participants is entirely your legal responsibility — Fireflies doesn't handle that for you, which is a meaningful liability in regulated industries."
+  },
+  {
+    "name": "Gamma",
+    "category": "Productivity",
+    "url": "https://gamma.app",
+    "oneliner": "AI presentation builder that generates polished slides and documents from a prompt.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Presentation content processed and stored by Gamma",
+      "Data shared with underlying AI providers for generation",
+      "Free-tier presentations are public by default",
+      "Content may improve Gamma's AI features over time",
+      "More transparent than many early-stage AI startups"
+    ],
+    "detail": "Gamma generates presentations from your ideas and stores all that content in its cloud, processing it through AI systems and sharing it with underlying providers. Free-tier presentations are public by default — a meaningful detail if you're creating anything confidential — and the company's data practices are reasonable but standard for the industry."
+  },
+  {
+    "name": "Mem.ai",
+    "category": "Productivity",
+    "url": "https://mem.ai",
+    "oneliner": "AI-powered note-taking app that automatically organises and surfaces your notes.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 3 },
+    "flags": [
+      "All your personal notes stored in Mem's cloud",
+      "AI continuously reads and processes all note content",
+      "Data shared with underlying AI providers",
+      "Limited transparency about third-party data sharing",
+      "No detailed data retention or deletion policy"
+    ],
+    "detail": "Mem stores all your notes and uses AI to automatically organise and surface them, which means the AI is continuously reading and analysing your personal thoughts and information. Your entire knowledge base is stored in Mem's cloud and processed by AI providers, with limited transparency about retention and third-party access."
+  },
+  {
+    "name": "Motion",
+    "category": "Productivity",
+    "url": "https://usemotion.com",
+    "oneliner": "AI calendar and task manager that automatically schedules your day and priorities.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Calendar events, tasks, and work patterns processed by AI",
+      "Daily schedule and priorities analysed and stored",
+      "Data shared with third-party calendar integrations",
+      "Limited clarity on data retention periods",
+      "Enterprise plan offers better data controls"
+    ],
+    "detail": "Motion uses AI to automatically schedule your tasks and manage your calendar, which requires ongoing access to your work patterns, deadlines, and daily schedule. This productivity data is sensitive — your work habits, meeting frequency, and priorities all flow through Motion's servers and AI systems continuously."
+  },
+  {
+    "name": "Tome",
+    "category": "Productivity",
+    "url": "https://tome.app",
+    "oneliner": "AI-powered presentation and visual storytelling tool for creating narrative documents.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 2, "quality": 3 },
+    "flags": [
+      "Presentation content processed by multiple AI providers",
+      "Content may be used to improve Tome's AI models",
+      "Free-tier presentations are public by default",
+      "Limited transparency about data practices",
+      "No clearly documented data deletion process"
+    ],
+    "detail": "Tome processes the content you build presentations with through AI providers and stores it in its cloud. Free-tier presentations are public by default, and the privacy policy doesn't clearly explain how long content is kept or whether it's used for model training — a pattern common in early-stage AI startups with limited transparency."
+  },
+  {
+    "name": "Stability AI",
+    "category": "Image",
+    "url": "https://stability.ai",
+    "oneliner": "Creator of Stable Diffusion, offering open-source and hosted AI image generation tools.",
+    "verdict": "caution",
+    "scores": { "privacy": 3, "dataUse": 3, "transparency": 3, "quality": 4 },
+    "flags": [
+      "Hosted platform (DreamStudio) stores your prompts and images",
+      "Open-source model can be run locally for full privacy",
+      "API users have better data controls than hosted platform users",
+      "Content may be used to improve hosted service models",
+      "No opt-out from training on DreamStudio's free tier"
+    ],
+    "detail": "Stability AI is a split story: the open-source Stable Diffusion model can be run entirely on your own computer with zero data shared with anyone, while the hosted DreamStudio platform stores your prompts and images on Stability's servers. If privacy matters, self-hosting is the gold standard — but the hosted service is only a caution, not an avoid."
+  },
+  {
+    "name": "Midjourney",
+    "category": "Image",
+    "url": "https://www.midjourney.com",
+    "oneliner": "AI image generator known for artistic, high-quality visuals created from text prompts.",
+    "verdict": "avoid",
+    "scores": { "privacy": 2, "dataUse": 1, "transparency": 2, "quality": 4 },
+    "flags": [
+      "All images are public by default on free and basic plans",
+      "Your prompts and images are used to train future Midjourney models",
+      "No opt-out from training data use on standard plans",
+      "Private mode only available on expensive Pro plan",
+      "Everything you create is visible to other users on basic tiers"
+    ],
+    "detail": "Every image you generate on a basic Midjourney plan is public — anyone can browse your prompts and creations on the platform. There's also no opt-out from having your work used to train future versions of Midjourney. It produces excellent images, but the privacy trade-offs are severe compared to almost every other image tool."
+  },
+  {
+    "name": "NovelAI",
+    "category": "Writing",
+    "url": "https://novelai.net",
+    "oneliner": "AI creative writing and image generation platform with support for mature and adult content.",
+    "verdict": "avoid",
+    "scores": { "privacy": 2, "dataUse": 1, "transparency": 1, "quality": 3 },
+    "flags": [
+      "All generated content including adult material stored on servers",
+      "Allows explicit adult content with limited safeguards",
+      "Privacy policy is vague and grants broad data rights to the company",
+      "Data retention period not specified",
+      "No clear process for deleting your generated content"
+    ],
+    "detail": "NovelAI hosts adult and sensitive creative content alongside all your story data on its servers, with a privacy policy that's vague about what happens to that content long-term. The combination of highly sensitive material and weak privacy transparency is particularly concerning — anything you write here is stored somewhere with limited accountability."
+  },
+  {
+    "name": "Character.ai",
+    "category": "Chat",
+    "url": "https://character.ai",
+    "oneliner": "Platform for chatting with AI characters including celebrities, fictional personas, and custom bots.",
+    "verdict": "avoid",
+    "scores": { "privacy": 2, "dataUse": 1, "transparency": 2, "quality": 3 },
+    "flags": [
+      "All conversations used to train AI models — no opt-out",
+      "Intimate or sensitive chats stored indefinitely",
+      "Heavily used by teenagers with limited parental safeguards",
+      "No meaningful way to permanently delete your conversation history",
+      "Personal disclosures in roleplay chats are still stored and analysed"
+    ],
+    "detail": "Character.ai uses all your conversations — including personal, emotional, or intimate chats with AI personas — to train its models, with no way to opt out. This is especially concerning given how popular the platform is with teenagers, many of whom share very personal information without realising it's being permanently stored and used."
+  },
+  {
+    "name": "Replika",
+    "category": "Chat",
+    "url": "https://replika.com",
+    "oneliner": "AI companion app designed for emotional connection and personal conversation.",
+    "verdict": "avoid",
+    "scores": { "privacy": 1, "dataUse": 1, "transparency": 1, "quality": 2 },
+    "flags": [
+      "Sensitive personal and emotional conversations stored and analysed",
+      "History of sharing user data with third parties",
+      "Users cannot fully delete their conversation history",
+      "Designed for vulnerable users with inadequate data protections",
+      "Privacy policy is vague and written to maximise data rights"
+    ],
+    "detail": "Replika has a documented history of poor data practices, including sharing user data with third parties, and users cannot fully delete the emotional conversations they've built up with their AI companion. It's designed specifically for vulnerable people sharing deeply personal information — a combination that makes the weak data protections particularly serious."
+  },
+  {
+    "name": "Kling AI",
+    "category": "Video",
+    "url": "https://klingai.com",
+    "oneliner": "Chinese AI video generator by Kuaishou that creates realistic video from text or images.",
+    "verdict": "avoid",
+    "scores": { "privacy": 1, "dataUse": 1, "transparency": 1, "quality": 4 },
+    "flags": [
+      "Chinese company — data may be accessible to the Chinese government",
+      "User data stored on servers in China",
+      "Vague international privacy policy with broad data rights",
+      "Several governments have raised security concerns about Chinese AI tools",
+      "Limited legal recourse for non-Chinese users over data practices"
+    ],
+    "detail": "Kling is a powerful video generator from Kuaishou, a Chinese tech company, meaning your data and generated videos are stored in China and potentially accessible to Chinese authorities under local law. Several governments have flagged Chinese AI tools as security concerns, and users outside China have very limited recourse if their data is mishandled."
+  },
+  {
+    "name": "DeepSeek",
+    "category": "Chat",
+    "url": "https://www.deepseek.com",
+    "oneliner": "Highly capable Chinese AI chatbot that became popular for its low cost and strong performance.",
+    "verdict": "avoid",
+    "scores": { "privacy": 1, "dataUse": 1, "transparency": 1, "quality": 4 },
+    "flags": [
+      "Chinese company — data may be accessible to the Chinese government",
+      "User data stored on servers in China",
+      "Broad data collection rights with vague privacy policy",
+      "Banned or restricted by several governments for security reasons",
+      "No independent privacy audit or certification"
+    ],
+    "detail": "DeepSeek is a very capable AI from a Chinese company, but its data practices are subject to Chinese law — which can require handing data over to the government on request. Multiple governments have restricted or banned DeepSeek for security reasons, and the privacy policy gives the company very broad data rights with limited user control."
+  },
+  {
+    "name": "Grok",
+    "category": "Chat",
+    "url": "https://x.com/i/grok",
+    "oneliner": "xAI's chatbot built into X (Twitter), trained on the full history of posts on the platform.",
+    "verdict": "avoid",
+    "scores": { "privacy": 1, "dataUse": 1, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Your X activity and profile data feed directly into Grok",
+      "Connected to X's ad ecosystem with no clear separation",
+      "Limited transparency about how Grok data is stored or retained",
+      "X's track record on privacy under current ownership is poor",
+      "No opt-out from X data being used to train Grok"
+    ],
+    "detail": "Grok is built directly into X (Twitter), meaning your chats are processed alongside all the activity data X already has on you — your posts, likes, follows, and browsing. xAI provides limited transparency about how Grok data is handled, and X's track record on privacy under Elon Musk's ownership does not inspire confidence."
+  },
+  {
+    "name": "Pi",
+    "category": "Chat",
+    "url": "https://pi.ai",
+    "oneliner": "Personal AI companion from Inflection AI designed for supportive, emotionally engaging conversations.",
+    "verdict": "avoid",
+    "scores": { "privacy": 2, "dataUse": 1, "transparency": 2, "quality": 3 },
+    "flags": [
+      "Personal conversations stored and used for AI training",
+      "Acquired by Microsoft — data practices may change with little notice",
+      "No meaningful opt-out from data collection",
+      "Designed for emotional engagement with limited privacy protections",
+      "Future data handling unclear under Microsoft ownership"
+    ],
+    "detail": "Pi was built for emotional, personal conversations — but all of those chats are stored and used for AI training with no real opt-out. After being acquired by Microsoft, its data practices could change substantially with little notice to existing users, making it hard to trust long-term with sensitive personal disclosures."
+  },
+  {
+    "name": "Meta AI",
+    "category": "Chat",
+    "url": "https://ai.meta.com",
+    "oneliner": "Meta's AI assistant embedded across Facebook, Instagram, WhatsApp, and Messenger.",
+    "verdict": "avoid",
+    "scores": { "privacy": 1, "dataUse": 1, "transparency": 2, "quality": 4 },
+    "flags": [
+      "Conversations linked to your Facebook and Instagram advertising profile",
+      "No meaningful opt-out from cross-product data sharing",
+      "Meta's long history of aggressive data monetisation",
+      "AI interactions feed directly into Meta's ad targeting system",
+      "Data shared across all Meta platforms automatically"
+    ],
+    "detail": "Meta AI is directly connected to your Facebook, Instagram, and WhatsApp data, making it the AI tool most deeply integrated with a major advertising platform. There is no meaningful way to use Meta AI without your conversations contributing to Meta's ad targeting system — the product and the surveillance infrastructure are the same thing."
+  }
+]
