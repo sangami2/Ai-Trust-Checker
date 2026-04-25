@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Directory from './components/Directory.jsx'
 import ToolLookup from './components/ToolLookup.jsx'
 import PolicyAnalyzer from './components/PolicyAnalyzer.jsx'
@@ -52,6 +53,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <Analytics />
     </div>
   )
 }
