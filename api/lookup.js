@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import Anthropic from '@anthropic-ai/sdk'
 
 const MAX_PAGE_CHARS = 6000

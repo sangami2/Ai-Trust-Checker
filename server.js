@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express'
 import analyzeHandler from './api/analyze.js'
 import lookupHandler from './api/lookup.js'
