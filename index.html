@@ -4,10 +4,45 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/shield.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Trust Checker</title>
+    <title>AI Trust Checker — Know what AI tools do with your data</title>
+    <meta name="description" content="AI Trust Checker helps you understand AI tool privacy in plain English. No accounts required. No data stored. Free and open source." />
+
+    <!-- Privacy & data handling — readable by crawlers and the Look Up feature -->
+    <meta name="privacy-policy" content="
+      AI Trust Checker Privacy Policy:
+      We do not collect, store, or sell any personal data.
+      No user accounts or login is required to use this tool.
+      No cookies are set. No analytics or tracking scripts are used. No ads.
+      When you submit text or a URL for analysis, it is sent in real-time to Anthropic's API (Claude) for processing and is immediately discarded — we do not log, save, or retain your input.
+      Anthropic's own privacy policy governs how they handle API requests: https://www.anthropic.com/privacy.
+      This app is open source. It is hosted on Vercel, whose infrastructure privacy policy applies to hosting: https://vercel.com/legal/privacy-policy.
+      No behavioural profiling. No third-party advertising. No data sold to any party.
+      You have nothing to opt out of because we collect nothing.
+      Contact: https://github.com/sangami2/Ai-Trust-Checker
+    " />
+
+    <meta name="og:title" content="AI Trust Checker" />
+    <meta name="og:description" content="Know what AI tools do with your data — in plain English. No legal speak. Free, no account needed, zero data stored." />
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Privacy statement for non-JS crawlers and the Look Up feature -->
+    <noscript>
+      <main style="font-family:sans-serif;max-width:600px;margin:2rem auto;padding:1rem">
+        <h1>AI Trust Checker</h1>
+        <p>Know what AI tools do with your data — in plain English, no legal speak.</p>
+        <h2>How we handle your data</h2>
+        <ul>
+          <li>We do not collect, store, or sell any personal data.</li>
+          <li>No user accounts or login required.</li>
+          <li>No cookies, no tracking, no ads.</li>
+          <li>Text and URLs you submit are sent to Anthropic's API for real-time analysis and immediately discarded — we never log or retain your input.</li>
+          <li>Open source: github.com/sangami2/Ai-Trust-Checker</li>
+        </ul>
+      </main>
+    </noscript>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

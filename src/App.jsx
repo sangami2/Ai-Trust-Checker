@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Directory from './components/Directory.jsx'
 import ToolLookup from './components/ToolLookup.jsx'
 import PolicyAnalyzer from './components/PolicyAnalyzer.jsx'
+import Footer from './components/Footer.jsx'
 
 const TABS = [
   { id: 'directory', label: 'Directory' },
@@ -49,6 +50,8 @@ export default function App() {
         {activeTab === 'lookup' && <ToolLookup />}
         {activeTab === 'analyzer' && <PolicyAnalyzer />}
       </main>
+
+      <Footer />
     </div>
   )
 }
