@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const MAX_CHARS = 8000
+const MAX_CHARS = 30000
 
 const VERDICT_STYLES = {
   safe: {
@@ -100,7 +100,7 @@ export default function PolicyAnalyzer() {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Paste a privacy policy here… (up to 8,000 characters)"
+            placeholder="Paste a privacy policy here… (up to 30,000 characters)"
             rows={10}
             className={`w-full rounded-xl border bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent resize-y leading-relaxed ${
               overLimit
@@ -117,7 +117,7 @@ export default function PolicyAnalyzer() {
             }`}
           >
             {charCount.toLocaleString()} / {MAX_CHARS.toLocaleString()} characters
-            {overLimit && ' — please trim the text'}
+            {overLimit && ' — please trim before submitting'}
           </span>
 
           <button

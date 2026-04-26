@@ -1,9 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Background circle -->
-  <circle cx="32" cy="32" r="32" fill="#0f172a"/>
-  <!-- Shield body -->
-  <path d="M32 10 L50 18 L50 34 C50 44 42 52 32 56 C22 52 14 44 14 34 L14 18 Z" fill="#38bdf8" opacity="0.15"/>
-  <path d="M32 10 L50 18 L50 34 C50 44 42 52 32 56 C22 52 14 44 14 34 L14 18 Z" stroke="#38bdf8" stroke-width="2.5" stroke-linejoin="round"/>
-  <!-- Checkmark -->
-  <path d="M23 32 L29 38 L41 26" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 L56 14 L56 36 C56 50 45 58 32 62 C19 58 8 50 8 36 L8 14 Z" fill="url(#g)" opacity="0.95"/>
+  <path d="M32 10 L50 19 L50 36 C50 47 42 53 32 57 C22 53 14 47 14 36 L14 19 Z" fill="white" opacity="0.07"/>
+  <path d="M20 33 L29 42 L44 24" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

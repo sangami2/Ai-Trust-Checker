@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 
-const MAX_CHARS = 8000
+const MAX_CHARS = 30000
 
 // Compact prompt keeps token cost low while covering all key risk signals
 const SYSTEM_PROMPT = `You are a privacy policy analyst. Analyze the policy and return ONLY valid JSON — no markdown, no backticks, nothing else:
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
     const message = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 512,
+      max_tokens: 1024,
       system: SYSTEM_PROMPT,
       messages: [{ role: 'user', content: truncated }],
     })
