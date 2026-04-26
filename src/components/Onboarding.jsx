@@ -46,7 +46,7 @@ const STEPS = [
     target: null,
     placement: 'center',
     title: 'Built by Akash Sangami',
-    body: "This tool is free, requires no account, and never stores your data. If you find it useful, I'd love to connect!",
+    body: "This tool is free, requires no account, and never stores your data. If you find it useful — or just want to chat — I'd love to connect!",
     cta: { label: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/akashsangami' },
   },
 ]
@@ -286,7 +286,7 @@ function Card({ current, step, isLast, onDismiss, onNext, onPrev, onGoTo, center
         {step} of {STEPS.length - 1}
       </p>
 
-      <h3 className="text-sm font-bold text-slate-900 mb-2 pr-8">{current.title}</h3>
+      <h3 className={`text-sm font-bold text-slate-900 mb-2 ${centered ? '' : 'pr-8'}`}>{current.title}</h3>
       <p className="text-[13px] text-slate-500 leading-relaxed mb-4">{current.body}</p>
 
       {current.cta && (

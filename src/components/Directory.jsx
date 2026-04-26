@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import tools from '../data/tools.json'
 import FilterBar from './FilterBar.jsx'
 import ToolCard from './ToolCard.jsx'
@@ -6,6 +6,7 @@ import ToolModal from './ToolModal.jsx'
 
 const VERDICT_ORDER = { avoid: 0, caution: 1, safe: 2 }
 const VERDICT_ORDER_SAFE_FIRST = { safe: 0, caution: 1, avoid: 2 }
+const PAGE_SIZE = 9
 
 const SORT_OPTIONS = [
   { value: 'risk-first', label: 'Riskiest first' },
@@ -26,7 +27,11 @@ export default function Directory() {
   const [verdict, setVerdict] = useState('all')
   const [sort, setSort] = useState('risk-first')
   const [search, setSearch] = useState('')
+  const [page, setPage] = useState(1)
   const [selectedTool, setSelectedTool] = useState(null)
+
+  // Reset to page 1 whenever filters change
+  useEffect(() => { setPage(1) }, [category, verdict, sort, search])
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase()
@@ -49,6 +54,24 @@ export default function Directory() {
       }
     })
   }, [category, verdict, sort, search])
+
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
+  const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+  const start = (page - 1) * PAGE_SIZE + 1
+  const end = Math.min(page * PAGE_SIZE, filtered.length)
+
+  function goTo(p) {
+    setPage(p)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Build page number list with ellipsis
+  function pageNumbers() {
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1)
+    if (page <= 4) return [1, 2, 3, 4, 5, '…', totalPages]
+    if (page >= totalPages - 3) return [1, '…', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages]
+    return [1, '…', page - 1, page, page + 1, '…', totalPages]
+  }
 
   return (
     <div>
@@ -103,7 +126,9 @@ export default function Directory() {
       ) : (
         <>
           <div className="flex items-center justify-between mb-4">
-            <p className="text-xs text-slate-400">Showing {filtered.length} of {tools.length} tools</p>
+            <p className="text-xs text-slate-400">
+              Showing {start}–{end} of {filtered.length} tools
+            </p>
             <div data-tour="sort-select" className="flex items-center gap-2">
               <label htmlFor="sort-select" className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
                 Sort
@@ -120,11 +145,59 @@ export default function Directory() {
               </select>
             </div>
           </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filtered.map((tool) => (
+            {paginated.map((tool) => (
               <ToolCard key={tool.name} tool={tool} onClick={() => setSelectedTool(tool)} />
             ))}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <p className="text-xs text-slate-400">
+                Page {page} of {totalPages}
+              </p>
+              <div className="flex items-center gap-1">
+                {/* Prev */}
+                <button
+                  onClick={() => goTo(page - 1)}
+                  disabled={page === 1}
+                  className="px-3 py-2 rounded-lg text-sm font-medium border border-slate-300 bg-white text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  ←
+                </button>
+
+                {/* Page numbers */}
+                {pageNumbers().map((p, i) =>
+                  p === '…' ? (
+                    <span key={`ellipsis-${i}`} className="px-2 py-2 text-slate-400 text-sm select-none">…</span>
+                  ) : (
+                    <button
+                      key={p}
+                      onClick={() => goTo(p)}
+                      className={`w-9 h-9 rounded-lg text-sm font-medium border transition-colors ${
+                        p === page
+                          ? 'bg-slate-700 text-white border-slate-700'
+                          : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  )
+                )}
+
+                {/* Next */}
+                <button
+                  onClick={() => goTo(page + 1)}
+                  disabled={page === totalPages}
+                  className="px-3 py-2 rounded-lg text-sm font-medium border border-slate-300 bg-white text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          )}
         </>
       )}
 
