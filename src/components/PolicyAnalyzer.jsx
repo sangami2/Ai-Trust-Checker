@@ -89,9 +89,9 @@ export default function PolicyAnalyzer() {
   return (
     <div className="max-w-2xl">
       <div className="mb-6">
-        <h2 className="text-lg font-semibold text-slate-900 mb-1">Policy Analyzer</h2>
+        <h2 className="text-lg font-semibold text-slate-900 mb-1">AI Policy Analyzer</h2>
         <p className="text-sm text-slate-500">
-          Paste any AI tool's privacy policy and get a plain-English breakdown of what it means for you.
+          Paste any AI tool's privacy policy text — or a URL — and get a plain-English breakdown of what it means for you.
         </p>
       </div>
 
@@ -100,7 +100,7 @@ export default function PolicyAnalyzer() {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Paste a privacy policy here… (up to 30,000 characters)"
+            placeholder="Paste a privacy policy or a URL here… (up to 30,000 characters)"
             rows={10}
             className={`w-full rounded-xl border bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent resize-y leading-relaxed ${
               overLimit

@@ -16,7 +16,9 @@ const VERDICT_ACTIVE = {
 
 export default function FilterBar({ category, verdict, onCategory, onVerdict }) {
   return (
-    <div className="space-y-3 mb-6">
+    <div data-tour="filter-bar" className="space-y-3 mb-6">
+
+      {/* Category */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide w-16 shrink-0">
           Category
@@ -46,6 +48,7 @@ export default function FilterBar({ category, verdict, onCategory, onVerdict }) 
         ))}
       </div>
 
+      {/* Verdict */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide w-16 shrink-0">
           Rating
@@ -64,6 +67,7 @@ export default function FilterBar({ category, verdict, onCategory, onVerdict }) 
           </button>
         ))}
       </div>
+
     </div>
   )
 }

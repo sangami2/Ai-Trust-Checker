@@ -51,7 +51,7 @@ export default function ToolLookup() {
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-slate-900 mb-1">Look Up Any AI Tool</h2>
         <p className="text-sm text-slate-500">
-          Paste the link to any AI tool's website and we'll analyse it and generate a trust card.
+          Paste the link to any AI tool's website and we'll analyze it and generate a trust card.
           Works best with the tool's homepage or privacy policy page.
         </p>
       </div>
@@ -74,7 +74,7 @@ export default function ToolLookup() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
             </svg>
           )}
-          {loading ? 'Analysing…' : 'Analyse'}
+          {loading ? 'Analyzing…' : 'Analyze'}
         </button>
       </form>
 
@@ -84,7 +84,7 @@ export default function ToolLookup() {
 
       {error && (
         <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
-          <strong>Couldn't analyse that URL:</strong> {error}
+          <strong>Couldn't analyze that URL:</strong> {error}
         </div>
       )}
 

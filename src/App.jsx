@@ -5,6 +5,7 @@ import ToolLookup from './components/ToolLookup.jsx'
 import PolicyAnalyzer from './components/PolicyAnalyzer.jsx'
 import Footer from './components/Footer.jsx'
 import Logo from './components/Logo.jsx'
+import Onboarding from './components/Onboarding.jsx'
 
 const TABS = [
   { id: 'directory', label: 'Directory' },
@@ -80,7 +81,7 @@ export default function App() {
                   AI Trust Checker
                 </h1>
                 <p className="mt-2 text-sm leading-snug text-slate-400 max-w-sm">
-                  Look up any AI tool. Paste any privacy policy.<br />
+                  Look up any AI tool. Paste any AI privacy policy.<br />
                   <span className="text-slate-300">Know exactly what you're agreeing to.</span>
                 </p>
               </div>
@@ -109,6 +110,7 @@ export default function App() {
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
+                  data-tour={`tab-${tab.id}`}
                   onClick={() => setActiveTab(tab.id)}
                   className={`relative px-5 py-3.5 text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     activeTab === tab.id
@@ -140,6 +142,7 @@ export default function App() {
 
       <Footer />
       <Analytics />
+      <Onboarding />
     </div>
   )
 }
