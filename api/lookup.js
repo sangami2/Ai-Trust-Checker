@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk'
 
 const MAX_PAGE_CHARS = 6000
 
-const SYSTEM_PROMPT = `You are an AI tool privacy researcher. Analyze the webpage content provided and return ONLY valid JSON — no markdown, no backticks, nothing else:
+const SYSTEM_PROMPT = `You are an AI tool privacy researcher. Analyze the tool at the given URL and return ONLY valid JSON — no markdown, no backticks, nothing else:
 {
   "name": "tool name",
   "category": "Chat|Writing|Image|Video|Voice|Productivity",
@@ -15,7 +15,7 @@ const SYSTEM_PROMPT = `You are an AI tool privacy researcher. Analyze the webpag
 
 Score each field 1-5: privacy=how well they protect your data (5=excellent), dataUse=how they use your data (5=minimal/ethical use), transparency=how clearly they explain their practices (5=very clear), quality=how good the product is (5=excellent).
 
-Base your scores on: what the page reveals about the tool, any privacy policy text visible, the company's known reputation, and what you know about this tool or company type. If the page shows little privacy info, reflect that uncertainty in lower transparency scores.
+If page content is provided, base your analysis on it. If not, use your training knowledge about the tool, its company, and known privacy practices. Either way, always return a complete, well-reasoned result — never refuse or return empty fields.
 
 Verdict: safe (mostly green practices), caution (some concerns or uncertainty), avoid (significant risks).
 Write 4-6 plain-English flags — mix of concerns and positives if appropriate.
@@ -64,24 +64,41 @@ export default async function handler(req, res) {
   }
 
   try {
-    const pageRes = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AI-Trust-Checker/1.0)' },
-      signal: AbortSignal.timeout(10000),
-      redirect: 'follow',
-    })
-    if (!pageRes.ok) {
-      return res.status(400).json({ error: `Could not fetch that page (status ${pageRes.status}). Try pasting the privacy policy text in the Policy Analyzer tab instead.` })
+    let pageText = ''
+    let fetchFailed = false
+
+    try {
+      const pageRes = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.9',
+          'Accept-Encoding': 'gzip, deflate, br',
+          'Cache-Control': 'no-cache',
+        },
+        signal: AbortSignal.timeout(10000),
+        redirect: 'follow',
+      })
+      if (pageRes.ok) {
+        const html = await pageRes.text()
+        pageText = stripHtml(html).slice(0, MAX_PAGE_CHARS)
+      } else {
+        fetchFailed = true
+      }
+    } catch {
+      fetchFailed = true
     }
 
-    const html = await pageRes.text()
-    const text = stripHtml(html).slice(0, MAX_PAGE_CHARS)
+    const userContent = fetchFailed
+      ? `URL: ${url}\n\nNote: The page could not be fetched directly. Use your training knowledge about this tool and its privacy practices to complete the analysis.`
+      : `URL: ${url}\n\nPage content:\n${pageText}`
 
     const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
     const message = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 512,
       system: SYSTEM_PROMPT,
-      messages: [{ role: 'user', content: `URL: ${url}\n\nPage content:\n${text}` }],
+      messages: [{ role: 'user', content: userContent }],
     })
 
     const raw = message.content[0].text.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '')
